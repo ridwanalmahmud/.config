@@ -17,20 +17,18 @@ curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/patched
 
 - command line tools
 ```
-pacman -S man ufw clang gdb neovim git tmux zsh github-cli fzf neofetch make -y
+pacman -S man ufw clang gdb neovim git tmux zsh github-cli fzf ripgrep make llvm
 ```
 
 ## git conf
 
 ```
 git config --global user.name "<username>"
-
 git config --global user.email "<email>"
-
 git config --global init.defaultBranch "master"
 ```
 
-## neovim conf
+## configuration file
 
 ```
 git clone https://github.com/ridwanalmahmud/config.git
