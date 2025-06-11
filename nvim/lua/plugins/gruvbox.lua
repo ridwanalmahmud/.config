@@ -1,40 +1,19 @@
 return {
-  "ellisonleao/gruvbox.nvim",
-  priority = 1000,
-  config = function()
-    local gruvbox = require("gruvbox")
-    require("gruvbox").setup({
-      terminal_colors = true, -- add neovim terminal colors
-      undercurl = true,
-      underline = true,
-      bold = true,
-      italic = {
-        strings = false,
-        emphasis = false,
-        comments = false,
-        operators = false,
-        folds = false,
-      },
-      strikethrough = false,
-      invert_selection = false,
-      invert_signs = false,
-      invert_tabline = false,
-      invert_intend_guides = false,
-      inverse = true, -- invert background for search, diffs, statuslines and errors
-      contrast = "hard", -- can be "hard", "soft" or empty string
-      palette_overrides = {},
-      overrides = {
-        Comment = { fg = "#2ea542" },
-        ["@function"] = { fg = gruvbox.palette.bright_purple },
-        ["@function.method.call"] = { fg = gruvbox.palette.light1 },
-        ["@variable"] = { fg = gruvbox.palette.bright_blue },
-        ["@type.definition"] = { fg = gruvbox.palette.light1 },
-        ["@function.call"] = { fg = gruvbox.palette.light1 },
-        ["@variable.member"] = { fg = gruvbox.palette.light1 },
-      },
-      dim_inactive = false,
-      transparent_mode = false,
-    })
-  end,
-  opts = ...,
+    "sainnhe/gruvbox-material",
+    enabled = true,
+    priority = 1000,
+    config = function()
+        vim.g.gruvbox_material_transparent_background = 0
+        vim.g.gruvbox_material_foreground = "mix"
+        vim.g.gruvbox_material_background = "hard"
+        vim.g.gruvbox_material_ui_contrast = "high"
+        vim.g.gruvbox_material_float_style = "bright"
+        vim.g.gruvbox_material_statusline_style = "material"
+        vim.g.gruvbox_material_cursor = "auto"
+
+        -- vim.g.gruvbox_material_colors_override = { bg0 = '#16181A' } -- #0e1010
+        vim.g.gruvbox_material_better_performance = 1
+
+        vim.cmd.colorscheme("gruvbox-material")
+    end,
 }

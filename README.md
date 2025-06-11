@@ -17,7 +17,7 @@ curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/patched
 
 - command line tools
 ```
-pacman -S man ufw clang gdb neovim git tmux zsh github-cli fzf ripgrep make llvm
+pacman -S man bat ufw llvm clang gdb neovim git tmux zsh github-cli fzf ripgrep make
 ```
 
 ## git conf
@@ -31,7 +31,7 @@ git config --global init.defaultBranch "master"
 ## configuration file
 
 ```
-git clone https://github.com/ridwanalmahmud/config.git
+git clone https://github.com/ridwanalmahmud/.config.git
 ```
 
 ## zsh conf
@@ -46,8 +46,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 - .zshrc
 ```
-for file in ~/.config/zsh/*.zsh
+echo -e "for file in ~/.config/zsh/*.zsh
 do
-  source "$file"
-done
+  source "\$file"
+done" > ~/.zshrc
 ```

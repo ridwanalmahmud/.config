@@ -103,7 +103,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-set -o vi
-export MANPAGER='nvim +Man!'
+alias bat="bat --style=numbers --theme=gruvbox-dark --no-pager"
 
-bindkey -s ^f "~/.config/scripts/tmux-sessionizer\n"
+set -o vi
+export MANPAGER="nvim +Man!"
+
+bindkey -s "^r" "source ~/.zshrc\n"
+bindkey -s "^f" "~/.config/scripts/tmux-sessionizer\n"
+bindkey -s "^p" "nvim \$(fzf --preview='bat --theme=gruvbox-dark --style=numbers --color=always {} || cat {}' --preview-window 'right:65%')\n"

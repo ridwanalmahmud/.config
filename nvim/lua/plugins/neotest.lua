@@ -9,13 +9,13 @@ return {
         -- "leoluz/nvim-dap-go",
     },
     config = function()
-        -- require("neotest").setup({
-        --     adapters = {
-        --         require("neotest-golang")({
-        --             dap = { justMyCode = false },
-        --         }),
-        --     },
-        -- })
+        require("neotest").setup({
+            adapters = {
+                -- require("neotest-golang")({
+                --     dap = { justMyCode = false },
+                -- }),
+            },
+        })
 
         vim.keymap.set("n", "<leader>tr", function()
             require("neotest").run.run({
