@@ -13,6 +13,7 @@ return {
                     "query",
                     "markdown",
                     "markdown_inline",
+                    "make"
                 },
 
                 -- Install parsers synchronously (only applied to `ensure_installed`)

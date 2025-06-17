@@ -106,6 +106,7 @@ source $ZSH/oh-my-zsh.sh
 alias bat="bat --style=numbers --theme=gruvbox-dark --no-pager"
 
 set -o vi
+export EDITOR="nvim"
 export MANPAGER="nvim +Man!"
 
 bindkey -s "^r" "source ~/.zshrc\n"

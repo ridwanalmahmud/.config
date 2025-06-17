@@ -4,7 +4,8 @@ return {
         vim.keymap.set("n", "<leader>zz", function()
             require("zen-mode").setup({
                 window = {
-                    width = 90,
+                    backdrop = 0.1,
+                    width = 1.0,
                     options = {},
                 },
                 plugins = {

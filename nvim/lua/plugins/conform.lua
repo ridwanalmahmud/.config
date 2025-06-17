@@ -8,6 +8,8 @@ return {
                 c = { "clang_format" },
                 cpp = { "clang_format" },
                 h = { "clang_format" },
+                yaml = { "yamlfmt" },
+                json = { "biome" },
             },
             formatters = {
                 clang_format = {
