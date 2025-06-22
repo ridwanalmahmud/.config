@@ -58,4 +58,4 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
-vim.keymap.set("n", "<leader>tf", "<cmd>!cd tests && make clean && make && make test<CR>")
+vim.keymap.set("n", "<leader>tf", "<cmd>!cd build && make test<CR>")

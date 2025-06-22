@@ -1,4 +1,4 @@
-# If you come from bash you might have to change your $PATH.
+#g If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
@@ -103,12 +103,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias bat="bat --style=numbers --theme=gruvbox-dark --no-pager"
+unsetopt AUTO_CD
 
 set -o vi
 export EDITOR="nvim"
 export MANPAGER="nvim +Man!"
 
+alias la="ls -lAvh --group-directories-first"
+alias glog="git --no-pager log --oneline --decorate --graph --parents"
+alias bat="bat --style=numbers --theme=gruvbox-dark --no-pager"
+
 bindkey -s "^r" "source ~/.zshrc\n"
 bindkey -s "^f" "~/.config/scripts/tmux-sessionizer\n"
-bindkey -s "^p" "nvim \$(fzf --preview='bat --theme=gruvbox-dark --style=numbers --color=always {} || cat {}' --preview-window 'right:65%')\n"
+bindkey -s "^p" "nvim \$(rg --files --hidden --glob '!.git' | fzf --preview='bat --theme=gruvbox-dark --style=numbers --color=always {} || cat {}' --preview-window 'right:65%')\n"

@@ -5,15 +5,16 @@ return {
         "nvim-lua/plenary.nvim",
         "antoinemadec/FixCursorHold.nvim",
         "nvim-treesitter/nvim-treesitter",
-        -- "fredrikaverpil/neotest-golang",
-        -- "leoluz/nvim-dap-go",
+        "orjangj/neotest-ctest",
     },
     config = function()
         require("neotest").setup({
             adapters = {
-                -- require("neotest-golang")({
-                --     dap = { justMyCode = false },
-                -- }),
+                require("neotest-ctest").setup({
+                    frameworks = {
+                        "gtest",
+                    },
+                }),
             },
         })
 
@@ -50,6 +51,5 @@ return {
         vim.keymap.set("n", "<leader>ta", function()
             require("neotest").run.run(vim.fn.getcwd())
         end, { desc = "Debug: Open test output" })
-
-    end
+    end,
 }
